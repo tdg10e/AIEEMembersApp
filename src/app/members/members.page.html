@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Members</ion-title>
+        <ion-button slot="end" fill="clear" color="medium">
+            <ion-icon slot="icon-only" name="refresh"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-content class="home">
+        <ion-list>
+            <ion-item *ngFor="let member of members">
+                <ion-avatar item-left>
+                    <img src="{{member.picture.thumbnail}}">
+                </ion-avatar>
+                <h2>{{member.name.first}} {{member.name.last}}</h2>
+                <p>{{member.email}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-content>
