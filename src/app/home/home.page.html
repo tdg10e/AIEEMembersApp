@@ -1,3 +1,45 @@
-<ion-content fullscreen>
-    <ion-button color="primary" (click)="viewMembers()">Continue</ion-button>
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-buttons slot="end">
+            <ion-button color='primary' (click)="viewMembers()">Skip</ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen text-center>
+    <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager="false">
+        <ion-slide>
+            <img src="assets/img/ica-slidebox-img-1.png" class="slide-image" />
+            <h2 class="slide-title">
+                Welcome to the
+                <b>AIEE Memebers App</b>
+            </h2>
+            <p>This app is used to view all members of AIEE, their contact info, and their eligibility for discounts on services.
+            </p>
+            <ion-label>SWIPE LEFT</ion-label>
+        </ion-slide>
+
+        <ion-slide>
+            <img src="assets/img/ica-slidebox-img-2.png" class="slide-image" />
+            <h2 class="slide-title">Member Eligibility</h2>
+            <p>Members are only eligible for discounts during the 10th year of their membership age and beyond! Active eligibility is indicated by a green lable on the member. </p>
+            <ion-label>SWIPE LEFT</ion-label>
+        </ion-slide>
+
+        <ion-slide>
+            <img src="assets/img/ica-slidebox-img-3.png" class="slide-image" />
+            <h2 class="slide-title">Member Details</h2>
+            <p>Need to contact a member? You can click into any member in the list to view more information about the member as well as contact methods.</p>
+            <ion-label>SWIPE LEFT</ion-label>
+        </ion-slide>
+
+        <ion-slide>
+            <img src="assets/img/like.png" class="slide-image" />
+            <h2 class="slide-title">Let's get Started!</h2>
+            <ion-button fill="clear" (click)="viewMembers()">
+                Continue
+                <ion-icon slot="end" name="arrow-forward"></ion-icon>
+            </ion-button>
+        </ion-slide>
+    </ion-slides>
 </ion-content>

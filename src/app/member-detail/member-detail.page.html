@@ -1,0 +1,42 @@
+<ion-header no-border>
+    <ion-toolbar>
+        <ion-button slot="end" fill="clear" color="medium" (click)="closeDetailScreen()">
+            <ion-icon slot="icon-only" name="close"></ion-icon>
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item text-center>
+        <ion-label>
+            <img src="{{memberData.profileImg}}">
+            <ion-label>{{memberData.firstName}} {{memberData.lastName}}</ion-label>
+            <ion-label>{{memberData.eligibility}}</ion-label>
+        </ion-label>
+    </ion-item>
+    <p class="title">More Information</p>
+    <ion-text>
+        <p class="sub-title">Gender</p>
+        <p class="val">{{memberData.gender}}</p>
+    </ion-text>
+    <ion-text>
+        <p class="sub-title">Age</p>
+        <p class="val">{{memberData.age}}</p>
+    </ion-text>
+    <ion-text>
+        <p class="sub-title">Address</p>
+        <p class="val">{{memberData.street}}, {{memberData.city}}, {{memberData.state}}</p>
+    </ion-text>
+    <ion-label class="title">Contact</ion-label>
+    <ion-text>
+        <p class="sub-title">Email</p>
+        <p class="val">{{memberData.email}}</p>
+    </ion-text>
+    <ion-text>
+        <p class="sub-title">Phone</p>
+        <p class="val">{{memberData.phone}}</p>
+        <p class="sub-title">Cell Phone</p>
+        <p class="val">{{memberData.cell}}</p>
+    </ion-text>
+
+</ion-content>

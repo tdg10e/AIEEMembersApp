@@ -8,15 +8,19 @@
 </ion-header>
 
 <ion-content>
-    <ion-content class="home">
-        <ion-list>
-            <ion-item *ngFor="let member of members">
-                <ion-avatar item-left>
-                    <img src="{{member.picture.thumbnail}}">
-                </ion-avatar>
-                <h2>{{member.name.first}} {{member.name.last}}</h2>
-                <p>{{member.email}}</p>
-            </ion-item>
-        </ion-list>
-    </ion-content>
+    <ion-list>
+        <ion-item class="member-item" *ngFor="let member of members" (click)="viewMemberDetails(member)">
+            <ion-avatar class="profile-image" items-left>
+                <img src="{{member.profileImg}}">
+            </ion-avatar>
+            <ion-label>
+                <h2>{{member.firstName}} {{member.lastName}}</h2>
+                <p [ngClass]="{'member-date-eligible':(member.eligibility === 'Eligible'), 'member-date-ineligible':(member.eligibility === 'Ineligible')}">{{member.firstName}} has been a member since {{member.registrationDate}}</p>
+            </ion-label>
+        </ion-item>
+    </ion-list>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
 </ion-content>
