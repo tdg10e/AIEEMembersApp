@@ -1,9 +1,6 @@
 <ion-header>
     <ion-toolbar>
         <ion-title>Members</ion-title>
-        <ion-button slot="end" fill="clear" color="medium">
-            <ion-icon slot="icon-only" name="refresh"></ion-icon>
-        </ion-button>
     </ion-toolbar>
 </ion-header>
 
@@ -19,8 +16,4 @@
             </ion-label>
         </ion-item>
     </ion-list>
-    <ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
-        <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading more data...">
-        </ion-infinite-scroll-content>
-    </ion-infinite-scroll>
 </ion-content>

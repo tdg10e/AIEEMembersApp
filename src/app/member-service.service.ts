@@ -19,7 +19,7 @@ export class MemberServiceService {
       // already loaded data
       //console.log("This is a test")
       return new Promise(resolve => {
-        this.http.get('https://randomuser.me/api/?results=10').subscribe(data => {
+        this.http.get('https://randomuser.me/api/?results=100').subscribe(data => {
           console.log(data["results"])
           return resolve(data["results"])
         });
